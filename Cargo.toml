@@ -1,0 +1,18 @@
+[package]
+name = "bevy_generic_systems"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Experiments with automatically registering generic systems."
+repository = "https://github.com/coolcatcoder/bevy_generic_systems"
+#readme = "README.md"
+keywords = ["bevy", "query", "generics"]
+categories = ["game-development"]
+
+[workspace]
+members = ["bevy_generic_systems_procedural_macros"]
+
+[dependencies]
+bevy_generic_systems_procedural_macros = {path="bevy_generic_systems_procedural_macros", version = "0.1.0"}
+bevy = { version = "0.15.1", default-features = false }
+bevy_registration = "0.2.4"

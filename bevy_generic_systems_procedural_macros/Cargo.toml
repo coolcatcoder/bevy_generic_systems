@@ -1,0 +1,16 @@
+[package]
+name = "bevy_generic_systems_procedural_macros"
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+description = "Experiments with automatically registering generic systems. This i"
+repository = "https://github.com/coolcatcoder/bevy_generic_systems"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+syn = { version = "2.0.77", default-features = false, features = ["full", "parsing", "proc-macro", "derive", "printing"] }
+quote = "1.0.37"
+proc-macro2 = "1.0.86"
+foldhash = "0.1.4"
