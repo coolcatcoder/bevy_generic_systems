@@ -4,6 +4,7 @@ This repository shall experiment, and attempt to come up with many potential sol
 
 |Solutions|
 |-|
+|[component_field_behaviour](https://github.com/coolcatcoder/bevy_generic_systems/tree/master/component_field_behaviour)
 
 ## Not on crates.io?
 This is not going on crates.io. This is purely for experimentation, with no versioning. Should any solution work well, then it can be moved to its own repository, and published to crates.io.
