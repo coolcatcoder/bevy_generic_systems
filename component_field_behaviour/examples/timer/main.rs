@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy_generic_systems::prelude::*;
+use component_field_behaviour::prelude::*;
 use bevy_registration::prelude::*;
 
 mod timer;
@@ -23,7 +23,7 @@ struct CakeTimer {
 fn cake_timer(cake_timers: Query<&CakeTimer>) {
     cake_timers.iter().for_each(|cake_timer| {
         if cake_timer.timer.remaining == 0. {
-            info!("Ding-a-ling-ling! Cake is done!")
+            info!("Ding-a-ling-ling! Cake is done!");
         }
     });
 }

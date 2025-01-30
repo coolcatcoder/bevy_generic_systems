@@ -1,0 +1,9 @@
+[package]
+name = "component_field_behaviour"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+procedural_macros = {path="procedural_macros"}
+bevy = { version = "0.15.1", default-features = false }
+bevy_registration = "0.2.4"

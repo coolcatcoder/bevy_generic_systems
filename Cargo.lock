@@ -178,21 +178,6 @@ dependencies = [
 [[package]]
 name = "bevy_generic_systems"
 version = "0.1.0"
-dependencies = [
- "bevy",
- "bevy_generic_systems_procedural_macros",
- "bevy_registration",
-]
-
-[[package]]
-name = "bevy_generic_systems_procedural_macros"
-version = "0.1.0"
-dependencies = [
- "foldhash",
- "proc-macro2",
- "quote",
- "syn",
-]
 
 [[package]]
 name = "bevy_hierarchy"
@@ -504,6 +489,15 @@ dependencies = [
  "glob",
  "libc",
  "libloading",
+]
+
+[[package]]
+name = "component_field_behaviour"
+version = "0.1.0"
+dependencies = [
+ "bevy",
+ "bevy_registration",
+ "procedural_macros",
 ]
 
 [[package]]
@@ -1002,6 +996,16 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "60946a68e5f9d28b0dc1c21bb8a97ee7d018a8b322fa57838ba31cc878e22d99"
 dependencies = [
  "unicode-ident",
+]
+
+[[package]]
+name = "procedural_macros"
+version = "0.1.0"
+dependencies = [
+ "foldhash",
+ "proc-macro2",
+ "quote",
+ "syn",
 ]
 
 [[package]]

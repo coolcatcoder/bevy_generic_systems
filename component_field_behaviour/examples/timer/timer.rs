@@ -1,5 +1,5 @@
 use bevy::prelude::*;
-use bevy_generic_systems::prelude::*;
+use component_field_behaviour::prelude::*;
 
 /// A simple timer. Once remaining is 0 then it is done!
 // TODO: Allow schedule setting. Perhaps via generics?

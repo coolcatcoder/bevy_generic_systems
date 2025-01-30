@@ -1,8 +1,8 @@
-use foldhash::{HashMap, HashMapExt};
 use proc_macro::TokenStream as StdTokenStream;
+use syn::{parse_macro_input, DeriveInput, Data, Ident, Type};
+use foldhash::{HashMap, HashMapExt};
 use proc_macro2::{Span, TokenStream};
 use quote::quote;
-use syn::{Data, DeriveInput, Ident, Type, parse_macro_input};
 
 #[proc_macro_derive(Behaviour)]
 pub fn behaviour(input: StdTokenStream) -> StdTokenStream {
@@ -56,7 +56,7 @@ fn behaviour_internal(input: DeriveInput) -> syn::Result<TokenStream> {
 
     Ok(quote! {
         #(
-            impl bevy_generic_systems::ComponentContains<#field_types> for #ident {
+            impl component_field_behaviour::ComponentContains<#field_types> for #ident {
                 fn get_mut<'a>(&'a mut self) -> impl Iterator<Item = &'a mut #field_types>
                 where
                     #field_types: 'a,
@@ -69,13 +69,13 @@ fn behaviour_internal(input: DeriveInput) -> syn::Result<TokenStream> {
                 }
             }
 
-            bevy_generic_systems::app!(|app| {
-                let maybe: bevy_generic_systems::MaybeApp<#field_types> = bevy_generic_systems::MaybeApp(std::marker::PhantomData);
+            component_field_behaviour::app!(|app| {
+                let maybe: component_field_behaviour::MaybeApp<#field_types> = component_field_behaviour::MaybeApp(std::marker::PhantomData);
 
                 #[allow(unused_imports)]
-                use bevy_generic_systems::HasComponentFieldBehaviour;
+                use component_field_behaviour::HasComponentFieldBehaviour;
                 #[allow(unused_imports)]
-                use bevy_generic_systems::NoComponentFieldBehaviour;
+                use component_field_behaviour::NoComponentFieldBehaviour;
                 (&&maybe).maybe_app::<#ident>(app);
             });
         )*
